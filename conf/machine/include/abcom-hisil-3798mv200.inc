@@ -13,7 +13,7 @@ require conf/machine/include/soc-family.inc
 
 require conf/machine/include/tune-cortexa15.inc
 
-MACHINE_FEATURES += "3dtv alsa hdmicec switchoff blindscan-tbs hisil-${HICHIPSET} hisil emmc mali wol 7segment multitranscoding blindscan-dvbs dvb-c ci fastboot mountboot HDMI"
+MACHINE_FEATURES += "alsa hdmicec switchoff blindscan-tbs hisil-${HICHIPSET} hisil emmc mali wol 7segment multitranscoding blindscan-dvbs dvb-c ci fastboot mountboot HDMI"
 
 SOC_FAMILY = "hisi3798mv200"
 HICHIPSET = "3798mv200"
@@ -117,5 +117,4 @@ IMAGE_CMD_prepend = "\
 
 EXTRA_ALSA = "mv200"
 
-RCTYPE = "28"
 RCNAME = "abcom"
