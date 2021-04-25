@@ -23,10 +23,10 @@ EXTRA_OECONF_append_pn-enigma2 = " --with-alphablendingacceleration=always --wit
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 --with-h265 --with-vb6 --with-vb8 --with-vb9 --with-spark"
 
-PREFERRED_PROVIDER_virtual/egl ?= "abcom-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles1 ?= "abcom-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles2 ?= "abcom-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgbm ?= "abcom-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/egl = "abcom-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles1 = "abcom-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles2 = "abcom-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgbm = "abcom-mali-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
 
