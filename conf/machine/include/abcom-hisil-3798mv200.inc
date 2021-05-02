@@ -3,7 +3,7 @@ MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
 DISTRO_FEATURES_append = " opengl"
 
-DISTRO_FEATURES_remove += "x11 wayland directfb"
+DISTRO_FEATURES_remove += "x11 wayland"
 
 BOX_BRAND = "abcom"
 
