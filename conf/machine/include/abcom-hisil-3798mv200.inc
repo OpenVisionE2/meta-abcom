@@ -1,10 +1,6 @@
 # We know about rtc
 MACHINE_FEATURES_BACKFILL_CONSIDERED = "rtc"
 
-DISTRO_FEATURES_append = " opengl"
-
-DISTRO_FEATURES_remove += "x11 wayland"
-
 BOX_BRAND = "abcom"
 
 KERNELVERSION = "4.4.35"
@@ -13,7 +9,7 @@ require conf/machine/include/soc-family.inc
 
 require conf/machine/include/tune-cortexa15.inc
 
-MACHINE_FEATURES += "alsa hdmicec switchoff blindscan-tbs hisil-${HICHIPSET} hisil emmc mali wol 7segment multitranscoding blindscan-dvbs dvb-c ci fastboot mountboot HDMI"
+MACHINE_FEATURES += "alsa hdmicec switchoff blindscan-tbs hisil-${HICHIPSET} hisil emmc mali wol 7segment multitranscoding blindscan-dvbs dvb-c ci fastboot mountboot HDMI kodi19"
 
 SOC_FAMILY = "hisi3798mv200"
 HICHIPSET = "3798mv200"
@@ -23,10 +19,10 @@ EXTRA_OECONF_append_pn-enigma2 = " --with-alphablendingacceleration=always --wit
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 --with-h265 --with-vb6 --with-vb8 --with-vb9 --with-spark"
 
-PREFERRED_PROVIDER_virtual/egl = "abcom-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles1 = "abcom-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgles2 = "abcom-mali-${MACHINE}"
-PREFERRED_PROVIDER_virtual/libgbm = "abcom-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/egl ?= "abcom-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles1 ?= "abcom-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgles2 ?= "abcom-mali-${MACHINE}"
+PREFERRED_PROVIDER_virtual/libgbm ?= "abcom-mali-${MACHINE}"
 PREFERRED_PROVIDER_virtual/libgl ?= "mesa"
 PREFERRED_PROVIDER_virtual/mesa ?= "mesa"
 
