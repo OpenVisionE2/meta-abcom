@@ -112,3 +112,5 @@ IMAGE_CMD_prepend = "\
 EXTRA_ALSA = "mv200"
 
 RCNAME = "abcom"
+
+DISPLAY_BRAND = "AB-COM"
