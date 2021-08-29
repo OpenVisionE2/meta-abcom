@@ -3,7 +3,7 @@ SECTION = "base"
 PRIORITY = "required"
 LICENSE = "CLOSED"
 DEPENDS = "zlib libpng freetype curl libxml2 libjpeg-turbo harfbuzz"
-RDEPENDS_${PN} = "libbluray"
+RDEPENDS:${PN} = "libbluray"
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
@@ -19,7 +19,7 @@ do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
 SOLIBS = ".so"
-FILES_SOLIBSDEV = ""
+FILES:SOLIBSDEV = ""
 
 # Disable anything auto depending
 EXCLUDE_FROM_SHLIBS = "1"
@@ -39,4 +39,4 @@ do_install() {
 do_package_qa() {
 }
 
-FILES_${PN} = "${libdir}/hisilicon/*"
+FILES:${PN} = "${libdir}/hisilicon/*"

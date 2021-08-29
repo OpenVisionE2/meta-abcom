@@ -13,7 +13,7 @@ SRC_URI = "http://source.mynonpublic.com/abcom/${MACHINE}-fastboot-${SRCDATE}.zi
 
 S = "${WORKDIR}"
 
-ALLOW_EMPTY_${PN} = "1"
+ALLOW_EMPTY:${PN} = "1"
 do_configure[nostamp] = "1"
 
 do_deploy() {

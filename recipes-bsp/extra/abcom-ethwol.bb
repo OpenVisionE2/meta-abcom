@@ -6,7 +6,7 @@ LICENSE = "CLOSED"
 SRC_URI = ""
 
 # Generate a mali rules script
-do_compile_append () {
+do_compile:append () {
 	cat > ethwol.sh << EOF
 #! /bin/sh
 PATH=/sbin:/bin:${sbindir}:${bindir}

@@ -6,13 +6,13 @@ require conf/license/license-close.inc
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-RDEPENDS_${PN} = "libjpeg-turbo pulseaudio-lib-rtp"
+RDEPENDS:${PN} = "libjpeg-turbo pulseaudio-lib-rtp"
 PROVIDES = "virtual/blindscan-dvbs"
 
 PV = "${KV}+${SRCDATE}"
 
 SRC_URI = "http://source.mynonpublic.com/abcom/${MACHINE}-drivers-${KV}-${SRCDATE}.zip"
-SRC_URI_append = " file://suspend.sh"
+SRC_URI:append = " file://suspend.sh"
 
 S = "${WORKDIR}"
 
@@ -37,7 +37,7 @@ do_install() {
 	install -m 0755 ${S}/turnoff_power ${D}${bindir}
 }
 
-FILES_${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf ${nonarch_base_libdir}/modules/${KV}/extra ${bindir} ${INIT_D_DIR}"
+FILES:${PN} += "${sysconfdir}/modules-load.d/_${MACHINE}.conf ${nonarch_base_libdir}/modules/${KV}/extra ${bindir} ${INIT_D_DIR}"
 
 INITSCRIPT_NAME = "suspend"
 INITSCRIPT_PARAMS = "start 89 0 ."

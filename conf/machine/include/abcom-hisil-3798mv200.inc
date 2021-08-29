@@ -7,7 +7,7 @@ KERNELVERSION = "4.4.35"
 
 require conf/machine/include/soc-family.inc
 
-require conf/machine/include/tune-cortexa15.inc
+require conf/machine/include/arm/armv7a/tune-cortexa15.inc
 
 MACHINE_FEATURES += "alsa hdmicec switchoff blindscan-tbs hisil-${HICHIPSET} hisil emmc mali wol 7segment multitranscoding blindscan-dvbs dvb-c ci fastboot mountboot HDMI kodi19"
 
@@ -15,7 +15,7 @@ SOC_FAMILY = "hisi3798mv200"
 HICHIPSET = "3798mv200"
 CHIPSET = "Hi3798Mv200"
 
-EXTRA_OECONF_append_pn-enigma2 = " --with-alphablendingacceleration=always --with-blitaccelerationthreshold=250  --with-fillaccelerationthreshold=190000"
+EXTRA_OECONF:append_pn-enigma2 = " --with-alphablendingacceleration=always --with-blitaccelerationthreshold=250  --with-fillaccelerationthreshold=190000"
 
 DVBMEDIASINK_CONFIG = "--with-wma --with-wmv --with-pcm --with-dts --with-eac3 --with-h265 --with-vb6 --with-vb8 --with-vb9 --with-spark"
 
@@ -63,7 +63,7 @@ KERNEL_MODULE_AUTOLOAD += "mali"
 IMAGE_CLASSES += " abemmc-fastboot8gb_image"
 IMAGE_FSTYPES += " abfastboot8gb"
 
-IMAGE_CMD_abfastboot8gb_append = " \
+IMAGE_CMD:abfastboot8gb:append = " \
 	mkdir -p ${DEPLOY_DIR_IMAGE}/${IMAGEDIRRECOVERY}/${IMAGEDIR}; \
 	cp ${IMGDEPLOYDIR}/bootoptions.img ${DEPLOY_DIR_IMAGE}/${IMAGEDIRRECOVERY}/${IMAGEDIR}/bootoptions.img; \
 	cp -f ${IMGDEPLOYDIR}/misc-boot.img ${DEPLOY_DIR_IMAGE}/${IMAGEDIRRECOVERY}/${IMAGEDIR}/misc-boot.img; \
@@ -105,7 +105,7 @@ IMAGE_CMD_abfastboot8gb_append = " \
 	rm -Rf ${DEPLOY_DIR_IMAGE}/abcom-partitions-${MACHINE}; \
 	"
 
-IMAGE_CMD_prepend = "\
+IMAGE_CMD:prepend = "\
 	rm -Rf ${IMAGE_ROOTFS}/tmp/*; \
 	"
 
