@@ -19,7 +19,7 @@ do_configure[noexec] = "1"
 do_compile[noexec] = "1"
 
 SOLIBS = ".so"
-FILES:SOLIBSDEV = ""
+FILES_SOLIBSDEV = ""
 
 # Disable anything auto depending
 EXCLUDE_FROM_SHLIBS = "1"
